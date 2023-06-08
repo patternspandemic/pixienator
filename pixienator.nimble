@@ -9,4 +9,4 @@ srcDir        = "src"
 
 # Dependencies
 
-requires "nim >= 1.6.12"
+requires "nim >= 1.6.12", "pixie >= 5.0.6", "delaunator >= 20230606"
