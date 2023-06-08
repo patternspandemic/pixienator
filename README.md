@@ -1,5 +1,6 @@
-# Pixienator
+# Pixienator - WIP
 Helpers for visualizing [Delaunator](https://github.com/patternspandemic/delaunator-nim) with [Pixie](https://github.com/treeform/pixie).
+Yeah, don't use this yet..
 
 `nimble install delaunator`
 
