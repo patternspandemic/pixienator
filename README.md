@@ -1,2 +1,13 @@
-# pixienator
-Helpers for visualizing [delaunator](https://github.com/patternspandemic/delaunator-nim) with [pixie](https://github.com/treeform/pixie).
+# Pixienator
+Helpers for visualizing [Delaunator](https://github.com/patternspandemic/delaunator-nim) with [Pixie](https://github.com/treeform/pixie).
+`nimble install delaunator`
+
+[API Reference](https://patternspandemic.github.io/pixienator/) - A work in progress.
+
+### Features
+- Lots of Path generators for various parts of the Delaunator datastructure.
+
+### Example
+```nim
+# Examples coming soon..
+```
