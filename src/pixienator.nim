@@ -5,6 +5,7 @@ import delaunator, delaunator/helpers
 
 
 #[ TODO:
+ use `sid` in place of pid where it reps a site?
  pathForNeighborSites
 support labels
 reconsider naming?
@@ -37,17 +38,12 @@ template defaultFor*(body, default: untyped) {.dirty.}=
     body
 
 
-# proc pathForSites*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), sitesRadius)
-# ): Path =
-#   var path = newPath()
-#   for (pid, p) in d.iterPoints:
-#     pthproc(path, pid, p)
-#   return path
 template pathForSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all sites of the triangulation. `body` will be evaluated
+  ## for each site. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `pid: uint32`: The *point* index of the site being considered
+  ## - `p: array[2, T]`: The site's point location
   bind pixienator.sitesRadius
   block:
     var path = newPath()
@@ -56,19 +52,13 @@ template pathForSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
         path.circle(float32(p[0]), float32(p[1]), sitesRadius)
     path
 
-# proc pathForSite*(
-#   d: Delaunator,
-#   pid: uint32,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), siteRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     p = [d.coords[2 * pid], d.coords[2 * pid + 1]]
-#   pthproc(path, pid, p)
-#   return path
+
 template pathForSite*(d: Delaunator, siteId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the site specified by `siteId`. `body` will be evaluated
+  ## for this site. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `pid: uint32`: The *point* index of the site being considered
+  ## - `p: array[2, T]`: The site's point location
   bind pixienator.siteRadius
   block:
     var
@@ -80,18 +70,13 @@ template pathForSite*(d: Delaunator, siteId: uint32, body: untyped = nil): Path 
     path
 
 
-# proc pathForCircumcenters*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, tid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), circumcentersRadius)
-# ): Path =
-#   var path = newPath()
-#   for (tid, _, _, _, _, _, _) in d.iterTriangles:
-#     let c = triangleCircumcenter(d, tid)
-#     pthproc(path, tid, c)
-#   return path
+#TODO: use an `iterTriangleIds` instead because most yielded items not needed.
 template pathForCircumcenters*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all circumcenters of the triangulation. `body` will be
+  ## evaluated for each circumcenter. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the circumcenter's triangle
+  ## - `c: array[2, T]`: The circumcenter's point location
   bind pixienator.circumcentersRadius
   block:
     var path = newPath()
@@ -102,19 +87,13 @@ template pathForCircumcenters*(d: Delaunator, body: untyped = nil): Path {.dirty
     path
 
 
-# proc pathForCircumcenter*(
-#   d: Delaunator,
-#   tid: uint32,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, tid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), circumcenterRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     c = triangleCircumcenter(d, tid)
-#   pthproc(path, tid, c)
-#   return path
 template pathForCircumcenter*(d: Delaunator, triangleId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the circumcenter constructed from the triangle specified
+  ## by `triangleId`. `body` will be evaluated for this circumcenter. Symbols
+  ## available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the circumcenter's triangle
+  ## - `c: array[2, T]`: The circumcenter's point location
   bind pixienator.circumcenterRadius
   block:
     var
@@ -126,18 +105,13 @@ template pathForCircumcenter*(d: Delaunator, triangleId: uint32, body: untyped =
     path
 
 
-# proc pathForTriangleCentroids*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, tid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), triCentroidsRadius)
-# ): Path =
-#   var path = newPath()
-#   for (tid, _, _, _, _, _, _) in d.iterTriangles:
-#     let c = triangleCentroid(d, tid)
-#     pthproc(path, tid, c)
-#   return path
+#TODO: use an `iterTriangleIds` instead because most yielded items not needed.
 template pathForTriangleCentroids*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all triangle centroids of the triangulation. `body`
+  ## will be evaluated for each centroid. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the centroid's triangle
+  ## - `c: array[2, T]`: The centroid's point location
   bind pixienator.triCentroidsRadius
   block:
     var path = newPath()
@@ -148,19 +122,13 @@ template pathForTriangleCentroids*(d: Delaunator, body: untyped = nil): Path {.d
     path
 
 
-# proc pathForTriangleCentroid*(
-#   d: Delaunator,
-#   tid: uint32,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, tid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), centroidRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     c = triangleCentroid(d, tid)
-#   pthproc(path, tid, c)
-#   return path
 template pathForTriangleCentroid*(d: Delaunator, triangleId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the centroid constructed from the triangle specified
+  ## by `triangleId`. `body` will be evaluated for this centroid. Symbols available
+  ## to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the centroid's triangle
+  ## - `c: array[2, T]`: The centroid's point location
   bind pixienator.centroidRadius
   block:
     var
@@ -172,18 +140,13 @@ template pathForTriangleCentroid*(d: Delaunator, triangleId: uint32, body: untyp
     path
 
 
-# proc pathForRegionCentroids*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), plyCentroidsRadius)
-# ): Path =
-#   var path = newPath()
-#   for (pid, verts) in d.iterVoronoiRegions:
-#     let c = polygonCentroid(verts)
-#     pthproc(path, pid, c)
-#   return path
 template pathForRegionCentroids*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all region centroids of the voronoi diagram. `body` will
+  ## be evaluated for each centroid. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `pid: uint32`: The *point* index of the region's site
+  ## - `verts: seq[array[2, T]]`: The points of the region's polygon
+  ## - `c: array[2, T]`: The centroid's point location
   bind pixienator.plyCentroidsRadius
   block:
     var path = newPath()
@@ -194,20 +157,14 @@ template pathForRegionCentroids*(d: Delaunator, body: untyped = nil): Path {.dir
     path
 
 
-# proc pathForRegionCentroid*(
-#   d: Delaunator,
-#   pid: uint32,
-#   pthproc: (var Path, uint32, array[2, float]) -> void =
-#            (pth: var Path, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), centroidRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     (pid, verts) = voronoiRegion(d, pid)
-#     c = polygonCentroid(verts)
-#   pthproc(path, pid, c)
-#   return path
 template pathForRegionCentroid*(d: Delaunator, siteId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the region centroid constructed from the site specified
+  ## by `siteId`. `body` will be evaluated for this centroid. Symbols available
+  ## to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `pid: uint32`: The *point* index of the region's site
+  ## - `verts: seq[array[2, T]]`: The points of the region's polygon
+  ## - `c: array[2, T]`: The centroid's point location
   bind pixienator.centroidRadius
   block:
     var
@@ -219,17 +176,13 @@ template pathForRegionCentroid*(d: Delaunator, siteId: uint32, body: untyped = n
     path
 
 
-# proc pathForHullSites*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, uint32, array[2, float]) -> void =
-#            (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), hullSitesRadius)
-# ): Path =
-#   var path = newPath()
-#   for (hid, pid, p) in d.iterHullPoints:
-#     pthproc(path, hid, pid, p)
-#   return path
 template pathForHullSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all sites on the hull of the triangulation. `body` will
+  ## be evaluated for each hull site. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `hid: uint32`: The *hull* index of site being considered
+  ## - `pid: uint32`: The *point* index of the site being considered
+  ## - `p: array[2, T]`: The site's point location
   bind pixienator.hullSitesRadius
   block:
     var path = newPath()
@@ -239,20 +192,13 @@ template pathForHullSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
     path
 
 
-# proc pathForHullSite*(
-#   d: Delaunator,
-#   hid: uint32,
-#   pthproc: (var Path, uint32, uint32, array[2, float]) -> void =
-#            (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =>
-#              pth.circle(float32(p[0]), float32(p[1]), hullSiteRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     pid = d.hull[hid]
-#     p = [d.coords[2 * pid], d.coords[2 * pid + 1]]
-#   pthproc(path, hid, pid, p)
-#   return path
 template pathForHullSite*(d: Delaunator, hullId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the site on the hull specified by `hullId`. `body` will
+  ## be evaluated for this hull site. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `hid: uint32`: The *hull* index of site being considered
+  ## - `pid: uint32`: The *point* index of the site being considered
+  ## - `p: array[2, T]`: The site's point location
   bind pixienator.hullSiteRadius
   block:
     var
@@ -265,24 +211,15 @@ template pathForHullSite*(d: Delaunator, hullId: uint32, body: untyped = nil): P
     path
 
 
-# proc pathForHalfedge*(
-#   d: Delaunator,
-#   eid: int32,
-#   pthproc: (var Path, int32, uint32, uint32, array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, eid: int32, pid: uint32, qid: uint32, p: array[2, float], q: array[2, float]) =
-#              pth.moveto(float32(p[0]), float32(p[1]))
-#              pth.lineto(float32(q[0]), float32(q[1]))
-#              pth.closepath()
-# ): Path =
-#   var
-#     path = newPath()
-#     pid = d.triangles[eid]
-#     qid = d.triangles[nextHalfedge(eid)]
-#     p = [d.coords[(2 * pid)], d.coords[(2 * pid + 1)]]
-#     q = [d.coords[(2 * qid)], d.coords[(2 * qid + 1)]]
-#   pthproc(path, eid, pid, qid, p, q)
-#   return path
 template pathForHalfedge*(d: Delaunator, edgeId: int32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the halfedge specified by `edgeId`. `body` will be
+  ## evaluated for this halfedge. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `eid: int32`: The *halfedges* index of halfedge being considered
+  ## - `pid: uint32`: The *point* index of the site where the halfedge starts
+  ## - `qid: uint32`: The *point* index of the site where the halfedge ends
+  ## - `p: array[2, T]`: The halfedge's starting point location
+  ## - `q: array[2, T]`: The halfedge's ending point location
   block:
     var
       path = newPath()
@@ -298,23 +235,18 @@ template pathForHalfedge*(d: Delaunator, edgeId: int32, body: untyped = nil): Pa
     path
 
 
-# proc pathsForHalfedgesAroundSite*(
-#   d: Delaunator,
-#   pid: uint32,
-#   pthproc: (var Path, int32, uint32, uint32, array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, eid: int32, pid: uint32, qid: uint32, p: array[2, float], q: array[2, float]) =
-#              pth.moveTo(float32(p[0]), float32(p[1]))
-#              pth.lineTo(float32(q[0]), float32(q[1]))
-#              pth.closePath()
-# ): seq[Path] =
-#   var
-#     eid = pointToLeftmostHalfedge(d, pid)
-#     edges = edgeIdsAroundPoint(d, eid)
-#     paths = newSeqOfCap[Path](edges.len)
-#   for he in edges:
-#     paths.add(pathForHalfedge(d, he, pthproc))
-#   return paths
+# TODO: OPT: qid is always sid
 template pathsForHalfedgesAroundSite*(d: Delaunator, siteId: uint32, body: untyped = nil): seq[Path] {.dirty.} =
+  ## Returns a `seq[Path]` of all halfedges leading to the site specified by
+  ## `siteId`. `body` will be evaluated for each halfedge. Symbols available
+  ## to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `sid: uint32`: The *point* index of the site being considered
+  ## - `eid: int32`: The *halfedges* index of halfedge being considered
+  ## - `pid: uint32`: The *point* index of the site where the halfedge starts
+  ## - `qid: uint32`: The *point* index of the site where the halfedge ends
+  ## - `p: array[2, T]`: The halfedge's starting point location
+  ## - `q: array[2, T]`: The halfedge's ending point location
   block:
     var
       leftmostEdge = pointToLeftmostHalfedge(d, siteId)
