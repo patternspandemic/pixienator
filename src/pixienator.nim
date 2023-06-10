@@ -5,9 +5,7 @@ import delaunator, delaunator/helpers
 
 
 #[ TODO:
- pathForExtents, pathForBounds, pathForNeighborSites
- better naming of avail vars
-reconsider path and pth, etc
+ pathForNeighborSites
 support labels
 reconsider naming?
 ]#
@@ -588,6 +586,23 @@ template pathForRegion*(d: Delaunator, siteId: uint32, body: untyped = nil): Pat
           path.lineTo(float32(v[0]), float32(v[1]))
         path.closePath()
     path
+
+template pathForExtents*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  block:
+    var
+      path = newPath()
+      minX = d.minX
+      minY = d.minY
+      maxX = d.maxX
+      maxY = d.maxY
+      x = minX
+      y = minY
+      w = maxX - minX
+      h = maxY - minY
+    defaultFor(body):
+      path.rect(x, y, w, h)
+    path
+
 
 template pathForBounds*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
