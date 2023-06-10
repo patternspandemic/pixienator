@@ -71,276 +71,102 @@ window.addEventListener('DOMContentLoaded', main);
   <div class="container">
     <h1 class="title">Index</h1>
     Modules: <a href="pixienator.html">pixienator</a>.<br/><p /><h2>API symbols</h2>
-<dl><dt><a name="pathForCircumcenter" href="#pathForCircumcenter"><span>pathForCircumcenter:</span></a></dt><dd><ul class="simple">
+<dl><dt><a name="defaultFor" href="#defaultFor"><span>defaultFor:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForCircumcenter(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcenterRadius)): Path" href="pixienator.html#pathForCircumcenter%2CDelaunator%2Cuint32">pixienator: pathForCircumcenter(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcenterRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: defaultFor(body, default: untyped)" href="pixienator.html#defaultFor.t%2Cuntyped%2Cuntyped">pixienator: defaultFor(body, default: untyped)</a></li>
+          </ul></dd>
+<dt><a name="pathForBounds" href="#pathForBounds"><span>pathForBounds:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="pixienator: pathForBounds(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForBounds.t%2CDelaunator%2Cuntyped">pixienator: pathForBounds(d: Delaunator; body: untyped = nil): Path</a></li>
+          </ul></dd>
+<dt><a name="pathForCircumcenter" href="#pathForCircumcenter"><span>pathForCircumcenter:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="pixienator: pathForCircumcenter(d: Delaunator; triangleId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForCircumcenter.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForCircumcenter(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForCircumcenters" href="#pathForCircumcenters"><span>pathForCircumcenters:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForCircumcenters(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcentersRadius)): Path" href="pixienator.html#pathForCircumcenters%2CDelaunator">pixienator: pathForCircumcenters(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcentersRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForCircumcenters(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForCircumcenters.t%2CDelaunator%2Cuntyped">pixienator: pathForCircumcenters(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForHalfedge" href="#pathForHalfedge"><span>pathForHalfedge:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForHalfedge(d: Delaunator; eid: int32; pthproc: (var Path, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForHalfedge%2CDelaunator%2Cint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForHalfedge(d: Delaunator; eid: int32; pthproc: (var Path, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForHalfedge(d: Delaunator; edgeId: int32; body: untyped = nil): Path" href="pixienator.html#pathForHalfedge.t%2CDelaunator%2Cint32%2Cuntyped">pixienator: pathForHalfedge(d: Delaunator; edgeId: int32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForHull" href="#pathForHull"><span>pathForHull:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForHull(d: Delaunator; pthproc: (var Path, uint32, int32, uint32, uint32,
-                                     array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; hid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForHull%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20hid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForHull(d: Delaunator; pthproc: (var Path, uint32, int32, uint32, uint32,
-                                     array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; hid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForHull(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForHull.t%2CDelaunator%2Cuntyped">pixienator: pathForHull(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForHullSite" href="#pathForHullSite"><span>pathForHullSite:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForHullSite(d: Delaunator; hid: uint32; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSiteRadius)): Path" href="pixienator.html#pathForHullSite%2CDelaunator%2Cuint32">pixienator: pathForHullSite(d: Delaunator; hid: uint32; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSiteRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForHullSite(d: Delaunator; hullId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForHullSite.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForHullSite(d: Delaunator; hullId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForHullSites" href="#pathForHullSites"><span>pathForHullSites:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForHullSites(d: Delaunator; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSitesRadius)): Path" href="pixienator.html#pathForHullSites%2CDelaunator">pixienator: pathForHullSites(d: Delaunator; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSitesRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForHullSites(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForHullSites.t%2CDelaunator%2Cuntyped">pixienator: pathForHullSites(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForRegion" href="#pathForRegion"><span>pathForRegion:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForRegion(d: Delaunator; sid: uint32; pthproc: (var Path, uint32,
-    seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForRegion%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForRegion(d: Delaunator; sid: uint32; pthproc: (var Path, uint32,
-    seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForRegion(d: Delaunator; siteId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForRegion.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForRegion(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForRegionCentroid" href="#pathForRegionCentroid"><span>pathForRegionCentroid:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForRegionCentroid(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path" href="pixienator.html#pathForRegionCentroid%2CDelaunator%2Cuint32">pixienator: pathForRegionCentroid(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForRegionCentroid(d: Delaunator; siteId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForRegionCentroid.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForRegionCentroid(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForRegionCentroids" href="#pathForRegionCentroids"><span>pathForRegionCentroids:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForRegionCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), plyCentroidsRadius)): Path" href="pixienator.html#pathForRegionCentroids%2CDelaunator">pixienator: pathForRegionCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), plyCentroidsRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForRegionCentroids(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForRegionCentroids.t%2CDelaunator%2Cuntyped">pixienator: pathForRegionCentroids(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForRegionEdges" href="#pathForRegionEdges"><span>pathForRegionEdges:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForRegionEdges(d: Delaunator; pthproc: (var Path, int32, array[2, float],
-    array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; p: array[2, float];
-                 q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForRegionEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForRegionEdges(d: Delaunator; pthproc: (var Path, int32, array[2, float],
-    array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; p: array[2, float];
-                 q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForRegionEdges(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForRegionEdges.t%2CDelaunator%2Cuntyped">pixienator: pathForRegionEdges(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForSite" href="#pathForSite"><span>pathForSite:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForSite(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), siteRadius)): Path" href="pixienator.html#pathForSite%2CDelaunator%2Cuint32">pixienator: pathForSite(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), siteRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForSite(d: Delaunator; siteId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForSite.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForSite(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForSites" href="#pathForSites"><span>pathForSites:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForSites(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), sitesRadius)): Path" href="pixienator.html#pathForSites%2CDelaunator">pixienator: pathForSites(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), sitesRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForSites(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForSites.t%2CDelaunator%2Cuntyped">pixienator: pathForSites(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForTriangle" href="#pathForTriangle"><span>pathForTriangle:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForTriangle(d: Delaunator; tid: uint32; pthproc: (var Path, uint32, uint32,
-    uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForTriangle%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForTriangle(d: Delaunator; tid: uint32; pthproc: (var Path, uint32, uint32,
-    uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForTriangle(d: Delaunator; triangleId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForTriangle.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForTriangle(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForTriangleCentroid" href="#pathForTriangleCentroid"><span>pathForTriangleCentroid:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForTriangleCentroid(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path" href="pixienator.html#pathForTriangleCentroid%2CDelaunator%2Cuint32">pixienator: pathForTriangleCentroid(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForTriangleCentroid(d: Delaunator; triangleId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForTriangleCentroid.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForTriangleCentroid(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForTriangleCentroids" href="#pathForTriangleCentroids"><span>pathForTriangleCentroids:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForTriangleCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), triCentroidsRadius)): Path" href="pixienator.html#pathForTriangleCentroids%2CDelaunator">pixienator: pathForTriangleCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), triCentroidsRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForTriangleCentroids(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForTriangleCentroids.t%2CDelaunator%2Cuntyped">pixienator: pathForTriangleCentroids(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForTriangleEdges" href="#pathForTriangleEdges"><span>pathForTriangleEdges:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForTriangleEdges(d: Delaunator; pthproc: (var Path, uint32, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path" href="pixienator.html#pathForTriangleEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForTriangleEdges(d: Delaunator; pthproc: (var Path, uint32, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForTriangleEdges(d: Delaunator; body: untyped = nil): Path" href="pixienator.html#pathForTriangleEdges.t%2CDelaunator%2Cuntyped">pixienator: pathForTriangleEdges(d: Delaunator; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathForTriangleSites" href="#pathForTriangleSites"><span>pathForTriangleSites:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathForTriangleSites(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  circle(pth, float32(p[0]), float32(p[1]), triangleSiteRadius)
-  circle(pth, float32(q[0]), float32(q[1]), triangleSiteRadius)
-  circle(pth, float32(r[0]), float32(r[1]), triangleSiteRadius)): Path" href="pixienator.html#pathForTriangleSites%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.gcsafe%2C%20locks%3A%200.%7D">pixienator: pathForTriangleSites(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  circle(pth, float32(p[0]), float32(p[1]), triangleSiteRadius)
-  circle(pth, float32(q[0]), float32(q[1]), triangleSiteRadius)
-  circle(pth, float32(r[0]), float32(r[1]), triangleSiteRadius)): Path</a></li>
+          data-doc-search-tag="pixienator: pathForTriangleSites(d: Delaunator; triangleId: uint32; body: untyped = nil): Path" href="pixienator.html#pathForTriangleSites.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathForTriangleSites(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
           </ul></dd>
 <dt><a name="pathsForHalfedgesAroundSite" href="#pathsForHalfedgesAroundSite"><span>pathsForHalfedgesAroundSite:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathsForHalfedgesAroundSite(d: Delaunator; pid: uint32; pthproc: (var Path,
-    int32, uint32, uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): seq[Path]" href="pixienator.html#pathsForHalfedgesAroundSite%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathsForHalfedgesAroundSite(d: Delaunator; pid: uint32; pthproc: (var Path,
-    int32, uint32, uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): seq[Path]</a></li>
+          data-doc-search-tag="pixienator: pathsForHalfedgesAroundSite(d: Delaunator; siteId: uint32; body: untyped = nil): seq[
+    Path]" href="pixienator.html#pathsForHalfedgesAroundSite.t%2CDelaunator%2Cuint32%2Cuntyped">pixienator: pathsForHalfedgesAroundSite(d: Delaunator; siteId: uint32; body: untyped = nil): seq[
+    Path]</a></li>
           </ul></dd>
 <dt><a name="pathsForRegions" href="#pathsForRegions"><span>pathsForRegions:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathsForRegions(d: Delaunator; pthproc: (var Path, uint32, seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): seq[Path]" href="pixienator.html#pathsForRegions%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathsForRegions(d: Delaunator; pthproc: (var Path, uint32, seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): seq[Path]</a></li>
+          data-doc-search-tag="pixienator: pathsForRegions(d: Delaunator; body: untyped = nil): seq[Path]" href="pixienator.html#pathsForRegions.t%2CDelaunator%2Cuntyped">pixienator: pathsForRegions(d: Delaunator; body: untyped = nil): seq[Path]</a></li>
           </ul></dd>
 <dt><a name="pathsForTriangles" href="#pathsForTriangles"><span>pathsForTriangles:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="pixienator: pathsForTriangles(d: Delaunator; pthproc: (var Path, uint32, uint32, uint32,
-    uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): seq[Path]" href="pixienator.html#pathsForTriangles%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D">pixienator: pathsForTriangles(d: Delaunator; pthproc: (var Path, uint32, uint32, uint32,
-    uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): seq[Path]</a></li>
+          data-doc-search-tag="pixienator: pathsForTriangles(d: Delaunator; body: untyped = nil): seq[Path]" href="pixienator.html#pathsForTriangles.t%2CDelaunator%2Cuntyped">pixienator: pathsForTriangles(d: Delaunator; body: untyped = nil): seq[Path]</a></li>
           </ul></dd>
 </dl>
     <div class="row">
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-08 23:27:51 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-10 02:29:30 UTC</small>
       </div>
     </div>
   </div>

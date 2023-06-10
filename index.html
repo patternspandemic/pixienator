@@ -99,290 +99,118 @@ window.addEventListener('DOMContentLoaded', main);
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
-  <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
+  <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">pathForCircumcenter
-      <li><a class="reference" href="#pathForCircumcenter%2CDelaunator%2Cuint32"
-    title="pathForCircumcenter(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcenterRadius)): Path">pathForCircumcenter(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcenterRadius)): Path</a></li>
+      <ul class="simple nested-toc-section">defaultFor
+      <li><a class="reference" href="#defaultFor.t%2Cuntyped%2Cuntyped"
+    title="defaultFor(body, default: untyped)">defaultFor(body, default: untyped)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">pathForBounds
+      <li><a class="reference" href="#pathForBounds.t%2CDelaunator%2Cuntyped"
+    title="pathForBounds(d: Delaunator; body: untyped = nil): Path">pathForBounds(d: Delaunator; body: untyped = nil): Path</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">pathForCircumcenter
+      <li><a class="reference" href="#pathForCircumcenter.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForCircumcenter(d: Delaunator; triangleId: uint32; body: untyped = nil): Path">pathForCircumcenter(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForCircumcenters
-      <li><a class="reference" href="#pathForCircumcenters%2CDelaunator"
-    title="pathForCircumcenters(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcentersRadius)): Path">pathForCircumcenters(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), circumcentersRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForCircumcenters.t%2CDelaunator%2Cuntyped"
+    title="pathForCircumcenters(d: Delaunator; body: untyped = nil): Path">pathForCircumcenters(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForHalfedge
-      <li><a class="reference" href="#pathForHalfedge%2CDelaunator%2Cint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForHalfedge(d: Delaunator; eid: int32; pthproc: (var Path, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path">pathForHalfedge(d: Delaunator; eid: int32; pthproc: (var Path, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForHalfedge.t%2CDelaunator%2Cint32%2Cuntyped"
+    title="pathForHalfedge(d: Delaunator; edgeId: int32; body: untyped = nil): Path">pathForHalfedge(d: Delaunator; edgeId: int32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForHull
-      <li><a class="reference" href="#pathForHull%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20hid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForHull(d: Delaunator; pthproc: (var Path, uint32, int32, uint32, uint32,
-                                     array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; hid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path">pathForHull(d: Delaunator; pthproc: (var Path, uint32, int32, uint32, uint32,
-                                     array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; hid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForHull.t%2CDelaunator%2Cuntyped"
+    title="pathForHull(d: Delaunator; body: untyped = nil): Path">pathForHull(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForHullSite
-      <li><a class="reference" href="#pathForHullSite%2CDelaunator%2Cuint32"
-    title="pathForHullSite(d: Delaunator; hid: uint32; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSiteRadius)): Path">pathForHullSite(d: Delaunator; hid: uint32; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSiteRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForHullSite.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForHullSite(d: Delaunator; hullId: uint32; body: untyped = nil): Path">pathForHullSite(d: Delaunator; hullId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForHullSites
-      <li><a class="reference" href="#pathForHullSites%2CDelaunator"
-    title="pathForHullSites(d: Delaunator; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSitesRadius)): Path">pathForHullSites(d: Delaunator; pthproc: (var Path, uint32, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, hid: uint32, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), hullSitesRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForHullSites.t%2CDelaunator%2Cuntyped"
+    title="pathForHullSites(d: Delaunator; body: untyped = nil): Path">pathForHullSites(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForRegion
-      <li><a class="reference" href="#pathForRegion%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForRegion(d: Delaunator; sid: uint32; pthproc: (var Path, uint32,
-    seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): Path">pathForRegion(d: Delaunator; sid: uint32; pthproc: (var Path, uint32,
-    seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForRegion.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForRegion(d: Delaunator; siteId: uint32; body: untyped = nil): Path">pathForRegion(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForRegionCentroid
-      <li><a class="reference" href="#pathForRegionCentroid%2CDelaunator%2Cuint32"
-    title="pathForRegionCentroid(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path">pathForRegionCentroid(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForRegionCentroid.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForRegionCentroid(d: Delaunator; siteId: uint32; body: untyped = nil): Path">pathForRegionCentroid(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForRegionCentroids
-      <li><a class="reference" href="#pathForRegionCentroids%2CDelaunator"
-    title="pathForRegionCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), plyCentroidsRadius)): Path">pathForRegionCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), plyCentroidsRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForRegionCentroids.t%2CDelaunator%2Cuntyped"
+    title="pathForRegionCentroids(d: Delaunator; body: untyped = nil): Path">pathForRegionCentroids(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForRegionEdges
-      <li><a class="reference" href="#pathForRegionEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForRegionEdges(d: Delaunator; pthproc: (var Path, int32, array[2, float],
-    array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; p: array[2, float];
-                 q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path">pathForRegionEdges(d: Delaunator; pthproc: (var Path, int32, array[2, float],
-    array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; p: array[2, float];
-                 q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForRegionEdges.t%2CDelaunator%2Cuntyped"
+    title="pathForRegionEdges(d: Delaunator; body: untyped = nil): Path">pathForRegionEdges(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForSite
-      <li><a class="reference" href="#pathForSite%2CDelaunator%2Cuint32"
-    title="pathForSite(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), siteRadius)): Path">pathForSite(d: Delaunator; pid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), siteRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForSite.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForSite(d: Delaunator; siteId: uint32; body: untyped = nil): Path">pathForSite(d: Delaunator; siteId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForSites
-      <li><a class="reference" href="#pathForSites%2CDelaunator"
-    title="pathForSites(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), sitesRadius)): Path">pathForSites(d: Delaunator; pthproc: (var Path, uint32, array[2, float]) -&gt;
-    void = (pth: var Path, pid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), sitesRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForSites.t%2CDelaunator%2Cuntyped"
+    title="pathForSites(d: Delaunator; body: untyped = nil): Path">pathForSites(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForTriangle
-      <li><a class="reference" href="#pathForTriangle%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForTriangle(d: Delaunator; tid: uint32; pthproc: (var Path, uint32, uint32,
-    uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): Path">pathForTriangle(d: Delaunator; tid: uint32; pthproc: (var Path, uint32, uint32,
-    uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForTriangle.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForTriangle(d: Delaunator; triangleId: uint32; body: untyped = nil): Path">pathForTriangle(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForTriangleCentroid
-      <li><a class="reference" href="#pathForTriangleCentroid%2CDelaunator%2Cuint32"
-    title="pathForTriangleCentroid(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path">pathForTriangleCentroid(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), centroidRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForTriangleCentroid.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForTriangleCentroid(d: Delaunator; triangleId: uint32; body: untyped = nil): Path">pathForTriangleCentroid(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForTriangleCentroids
-      <li><a class="reference" href="#pathForTriangleCentroids%2CDelaunator"
-    title="pathForTriangleCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), triCentroidsRadius)): Path">pathForTriangleCentroids(d: Delaunator; pthproc: (var Path, uint32,
-    array[2, float]) -&gt;
-    void = (pth: var Path, tid: uint32, p: array[2, float]) =&gt;
-    pth.circle(float32(p[0]), float32(p[1]), triCentroidsRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForTriangleCentroids.t%2CDelaunator%2Cuntyped"
+    title="pathForTriangleCentroids(d: Delaunator; body: untyped = nil): Path">pathForTriangleCentroids(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForTriangleEdges
-      <li><a class="reference" href="#pathForTriangleEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForTriangleEdges(d: Delaunator; pthproc: (var Path, uint32, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path">pathForTriangleEdges(d: Delaunator; pthproc: (var Path, uint32, int32, uint32,
-    uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; eid: int32; pid: uint32;
-                 qid: uint32; p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): Path</a></li>
+      <li><a class="reference" href="#pathForTriangleEdges.t%2CDelaunator%2Cuntyped"
+    title="pathForTriangleEdges(d: Delaunator; body: untyped = nil): Path">pathForTriangleEdges(d: Delaunator; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathForTriangleSites
-      <li><a class="reference" href="#pathForTriangleSites%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.gcsafe%2C%20locks%3A%200.%7D"
-    title="pathForTriangleSites(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  circle(pth, float32(p[0]), float32(p[1]), triangleSiteRadius)
-  circle(pth, float32(q[0]), float32(q[1]), triangleSiteRadius)
-  circle(pth, float32(r[0]), float32(r[1]), triangleSiteRadius)): Path">pathForTriangleSites(d: Delaunator; tid: uint32; pthproc: (var Path, uint32,
-    uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  circle(pth, float32(p[0]), float32(p[1]), triangleSiteRadius)
-  circle(pth, float32(q[0]), float32(q[1]), triangleSiteRadius)
-  circle(pth, float32(r[0]), float32(r[1]), triangleSiteRadius)): Path</a></li>
+      <li><a class="reference" href="#pathForTriangleSites.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathForTriangleSites(d: Delaunator; triangleId: uint32; body: untyped = nil): Path">pathForTriangleSites(d: Delaunator; triangleId: uint32; body: untyped = nil): Path</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathsForHalfedgesAroundSite
-      <li><a class="reference" href="#pathsForHalfedgesAroundSite%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathsForHalfedgesAroundSite(d: Delaunator; pid: uint32; pthproc: (var Path,
-    int32, uint32, uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): seq[Path]">pathsForHalfedgesAroundSite(d: Delaunator; pid: uint32; pthproc: (var Path,
-    int32, uint32, uint32, array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; eid: int32; pid: uint32; qid: uint32;
-                 p: array[2, float]; q: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  closePath(pth)): seq[Path]</a></li>
+      <li><a class="reference" href="#pathsForHalfedgesAroundSite.t%2CDelaunator%2Cuint32%2Cuntyped"
+    title="pathsForHalfedgesAroundSite(d: Delaunator; siteId: uint32; body: untyped = nil): seq[
+    Path]">pathsForHalfedgesAroundSite(d: Delaunator; siteId: uint32; body: untyped = nil): seq[
+    Path]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathsForRegions
-      <li><a class="reference" href="#pathsForRegions%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathsForRegions(d: Delaunator; pthproc: (var Path, uint32, seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): seq[Path]">pathsForRegions(d: Delaunator; pthproc: (var Path, uint32, seq[array[2, float]]) -&gt;
-    void = proc (pth: var Path; sid: uint32; verts: seq[array[2, float]]) =
-  moveTo(pth, float32(verts[0][0]), float32(verts[0][1]))
-  for v in items(verts[1 .. BackwardsIndex(1)]):
-    lineTo(pth, float32(v[0]), float32(v[1]))
-  closePath(pth)): seq[Path]</a></li>
+      <li><a class="reference" href="#pathsForRegions.t%2CDelaunator%2Cuntyped"
+    title="pathsForRegions(d: Delaunator; body: untyped = nil): seq[Path]">pathsForRegions(d: Delaunator; body: untyped = nil): seq[Path]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">pathsForTriangles
-      <li><a class="reference" href="#pathsForTriangles%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"
-    title="pathsForTriangles(d: Delaunator; pthproc: (var Path, uint32, uint32, uint32,
-    uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): seq[Path]">pathsForTriangles(d: Delaunator; pthproc: (var Path, uint32, uint32, uint32,
-    uint32, array[2, float], array[2, float], array[2, float]) -&gt;
-    void = proc (pth: var Path; tid: uint32; pid: uint32; qid: uint32;
-                 rid: uint32; p: array[2, float]; q: array[2, float];
-                 r: array[2, float]) =
-  moveTo(pth, float32(p[0]), float32(p[1]))
-  lineTo(pth, float32(q[0]), float32(q[1]))
-  lineTo(pth, float32(r[0]), float32(r[1]))
-  closePath(pth)): seq[Path]</a></li>
+      <li><a class="reference" href="#pathsForTriangles.t%2CDelaunator%2Cuntyped"
+    title="pathsForTriangles(d: Delaunator; body: untyped = nil): seq[Path]">pathsForTriangles(d: Delaunator; body: untyped = nil): seq[Path]</a></li>
 
   </ul>
 
@@ -401,341 +229,283 @@ class="link-seesrc" target="_blank">Source</a>
   <div id="tocRoot"></div>
   
   <p class="module-desc"></p>
-  <div class="section" id="12">
-<h1><a class="toc-backref" href="#12">Procs</a></h1>
+  <div class="section" id="18">
+<h1><a class="toc-backref" href="#18">Templates</a></h1>
 <dl class="item">
-<div id="pathForCircumcenter,Delaunator,uint32">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForCircumcenter%2CDelaunator%2Cuint32"><span class="Identifier">pathForCircumcenter</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">circumcenterRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="defaultFor.t,untyped,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#defaultFor.t%2Cuntyped%2Cuntyped"><span class="Identifier">defaultFor</span></a><span class="Other">(</span><span class="Identifier">body</span><span class="Other">,</span> <span class="Identifier">default</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L68"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L35"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L68" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L35" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForCircumcenters,Delaunator">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForCircumcenters%2CDelaunator"><span class="Identifier">pathForCircumcenters</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">circumcentersRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForBounds.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForBounds.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForBounds</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L55"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L592"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L55" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L592" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForHalfedge,Delaunator,int32,proc (pth: var Path, eid: int32, pid: uint32, qid: uint32, p: array[0..1, float], q: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForHalfedge%2CDelaunator%2Cint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForHalfedge</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">int32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForCircumcenter.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForCircumcenter.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForCircumcenter</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">triangleId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                             <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L164"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L119"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L164" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L119" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForHull,Delaunator,proc (pth: var Path, hid: uint32, eid: int32, pid: uint32, qid: uint32, p: array[0..1, float], q: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForHull%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20hid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForHull</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">int32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">hid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForCircumcenters.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForCircumcenters.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForCircumcenters</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L201"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L96"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L201" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L96" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForHullSite,Delaunator,uint32">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForHullSite%2CDelaunator%2Cuint32"><span class="Identifier">pathForHullSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">hid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">hid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">hullSiteRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForHalfedge.t,Delaunator,int32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForHalfedge.t%2CDelaunator%2Cint32%2Cuntyped"><span class="Identifier">pathForHalfedge</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">edgeId</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L149"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L287"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L287" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForHullSites,Delaunator">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForHullSites%2CDelaunator"><span class="Identifier">pathForHullSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">hid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">hullSitesRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForHull.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForHull.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForHull</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L137"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L358"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L137" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L358" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForRegion,Delaunator,uint32,proc (pth: var Path, sid: uint32, verts: seq[array[0..1, float]]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForRegion%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForRegion</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">sid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">sid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">verts</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">1</span> <span class="Operator">..</span> <span class="Identifier">BackwardsIndex</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForHullSite.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForHullSite.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForHullSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">hullId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L324"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L257"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L324" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L257" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForRegionCentroid,Delaunator,uint32">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForRegionCentroid%2CDelaunator%2Cuint32"><span class="Identifier">pathForRegionCentroid</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">centroidRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForHullSites.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForHullSites.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForHullSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L122"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L234"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L122" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L234" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForRegionCentroids,Delaunator">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForRegionCentroids%2CDelaunator"><span class="Identifier">pathForRegionCentroids</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">plyCentroidsRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForRegion.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForRegion.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForRegion</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">siteId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L109"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L579"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L579" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForRegionEdges,Delaunator,proc (pth: var Path, eid: int32, p: array[0..1, float], q: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForRegionEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForRegionEdges</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">int32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span>
-                 <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForRegionCentroid.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForRegionCentroid.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForRegionCentroid</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">siteId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                               <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L291"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L212"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L291" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L212" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForSite,Delaunator,uint32">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForSite%2CDelaunator%2Cuint32"><span class="Identifier">pathForSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">siteRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForRegionCentroids.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForRegionCentroids.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForRegionCentroids</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L41"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L188"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L41" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L188" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForSites,Delaunator">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForSites%2CDelaunator"><span class="Identifier">pathForSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">sitesRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForRegionEdges.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForRegionEdges.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForRegionEdges</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L29"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L521"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L29" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L521" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForTriangle,Delaunator,uint32,proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[0..1, float], q: array[0..1, float], r: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForTriangle%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForTriangle</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">rid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span>
-                 <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForSite.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForSite.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">siteId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L271"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L73"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L271" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L73" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForTriangleCentroid,Delaunator,uint32">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForTriangleCentroid%2CDelaunator%2Cuint32"><span class="Identifier">pathForTriangleCentroid</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">centroidRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForSites.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForSites.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L95"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L52"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L95" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L52" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForTriangleCentroids,Delaunator">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForTriangleCentroids%2CDelaunator"><span class="Identifier">pathForTriangleCentroids</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">=&gt;</span>
-    <span class="Identifier">pth</span><span class="Other">.</span><span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">triCentroidsRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForTriangle.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForTriangle.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForTriangle</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">triangleId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L82"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L487"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L82" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L487" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForTriangleEdges,Delaunator,proc (pth: var Path, tid: uint32, eid: int32, pid: uint32, qid: uint32, p: array[0..1, float], q: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForTriangleEdges%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForTriangleEdges</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">int32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForTriangleCentroid.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForTriangleCentroid.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForTriangleCentroid</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">triangleId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                                 <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L237"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L165"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L237" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L165" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathForTriangleSites,Delaunator,uint32,proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[0..1, float], q: array[0..1, float], r: array[0..1, float]){.gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathForTriangleSites%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathForTriangleSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">rid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span>
-                 <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">triangleSiteRadius</span><span class="Other">)</span>
-  <span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">triangleSiteRadius</span><span class="Other">)</span>
-  <span class="Identifier">circle</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">triangleSiteRadius</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span></pre></dt>
+<div id="pathForTriangleCentroids.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForTriangleCentroids.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForTriangleCentroids</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L218"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L142"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L218" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L142" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathsForHalfedgesAroundSite,Delaunator,uint32,proc (pth: var Path, eid: int32, pid: uint32, qid: uint32, p: array[0..1, float], q: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathsForHalfedgesAroundSite%2CDelaunator%2Cuint32%2Cproc%20%28pth%3A%20var%20Path%2C%20eid%3A%20int32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathsForHalfedgesAroundSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span>
-    <span class="Identifier">int32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">eid</span><span class="Other">:</span> <span class="Identifier">int32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span></pre></dt>
+<div id="pathForTriangleEdges.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForTriangleEdges.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForTriangleEdges</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L183"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L426"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L183" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L426" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathsForRegions,Delaunator,proc (pth: var Path, sid: uint32, verts: seq[array[0..1, float]]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathsForRegions%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20sid%3A%20uint32%2C%20verts%3A%20seq%5Barray%5B0..1%2C%20float%5D%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathsForRegions</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">sid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">verts</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">for</span> <span class="Identifier">v</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Other">(</span><span class="Identifier">verts</span><span class="Other">[</span><span class="DecNumber">1</span> <span class="Operator">..</span> <span class="Identifier">BackwardsIndex</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span>
-    <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">v</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span></pre></dt>
+<div id="pathForTriangleSites.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathForTriangleSites.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathForTriangleSites</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">triangleId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                              <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L307"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L389"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L307" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L389" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
-<div id="pathsForTriangles,Delaunator,proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[0..1, float], q: array[0..1, float], r: array[0..1, float]){.noSideEffect, gcsafe, locks: 0.}">
-<dt><pre><span class="Keyword">proc</span> <a href="#pathsForTriangles%2CDelaunator%2Cproc%20%28pth%3A%20var%20Path%2C%20tid%3A%20uint32%2C%20pid%3A%20uint32%2C%20qid%3A%20uint32%2C%20rid%3A%20uint32%2C%20p%3A%20array%5B0..1%2C%20float%5D%2C%20q%3A%20array%5B0..1%2C%20float%5D%2C%20r%3A%20array%5B0..1%2C%20float%5D%29%7B.noSideEffect%2C%20gcsafe%2C%20locks%3A%200.%7D"><span class="Identifier">pathsForTriangles</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">pthproc</span><span class="Other">:</span> <span class="Other">(</span><span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span>
-    <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">uint32</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Operator">-&gt;</span>
-    <span class="Identifier">void</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">pth</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Path</span><span class="Other">;</span> <span class="Identifier">tid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">pid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">qid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
-                 <span class="Identifier">rid</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">q</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span>
-                 <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span> <span class="Other">=</span>
-  <span class="Identifier">moveTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">q</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">lineTo</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">(</span><span class="Identifier">r</span><span class="Other">[</span><span class="DecNumber">1</span><span class="Other">]</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Identifier">closePath</span><span class="Other">(</span><span class="Identifier">pth</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span></pre></dt>
+<div id="pathsForHalfedgesAroundSite.t,Delaunator,uint32,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathsForHalfedgesAroundSite.t%2CDelaunator%2Cuint32%2Cuntyped"><span class="Identifier">pathsForHalfedgesAroundSite</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">siteId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span>
+                                     <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L254"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L319"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L254" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L319" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="pathsForRegions.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathsForRegions.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathsForRegions</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L549"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L549" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+</div>
+<div id="pathsForTriangles.t,Delaunator,untyped">
+<dt><pre><span class="Keyword">template</span> <a href="#pathsForTriangles.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathsForTriangles</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span> {.
+    <span class="Identifier">dirty</span>.}</pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L454"
+class="link-seesrc" target="_blank">Source</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L454" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -749,7 +519,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-08 23:27:51 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-10 02:29:30 UTC</small>
       </div>
     </div>
   </div>
