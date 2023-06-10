@@ -19,4 +19,5 @@ pathForTriangle	pixienator.html#pathForTriangle.t,Delaunator,uint32,untyped	pixi
 pathForRegionEdges	pixienator.html#pathForRegionEdges.t,Delaunator,untyped	pixienator: pathForRegionEdges(d: Delaunator; body: untyped = nil): Path	
 pathsForRegions	pixienator.html#pathsForRegions.t,Delaunator,untyped	pixienator: pathsForRegions(d: Delaunator; body: untyped = nil): seq[Path]	
 pathForRegion	pixienator.html#pathForRegion.t,Delaunator,uint32,untyped	pixienator: pathForRegion(d: Delaunator; siteId: uint32; body: untyped = nil): Path	
+pathForExtents	pixienator.html#pathForExtents.t,Delaunator,untyped	pixienator: pathForExtents(d: Delaunator; body: untyped = nil): Path	
 pathForBounds	pixienator.html#pathForBounds.t,Delaunator,untyped	pixienator: pathForBounds(d: Delaunator; body: untyped = nil): Path	
