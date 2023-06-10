@@ -53,7 +53,7 @@ template pathForSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   bind pixienator.sitesRadius
   block:
     var path = newPath()
-    for (pid, p) in d.iterPoints:
+    for (pid, p) in iterPoints(d):
       defaultFor(body):
         path.circle(float32(p[0]), float32(p[1]), sitesRadius)
     path
@@ -97,7 +97,7 @@ template pathForCircumcenters*(d: Delaunator, body: untyped = nil): Path {.dirty
   bind pixienator.circumcentersRadius
   block:
     var path = newPath()
-    for (tid, _, _, _, _, _, _) in d.iterTriangles:
+    for (tid, _, _, _, _, _, _) in iterTriangles(d):
       let c = triangleCircumcenter(d, tid)
       defaultFor(body):
         path.circle(float32(c[0]), float32(c[1]), circumcentersRadius)
@@ -143,7 +143,7 @@ template pathForTriangleCentroids*(d: Delaunator, body: untyped = nil): Path {.d
   bind pixienator.triCentroidsRadius
   block:
     var path = newPath()
-    for (tid, _, _, _, _, _, _) in d.iterTriangles:
+    for (tid, _, _, _, _, _, _) in iterTriangles(d):
       let c = triangleCentroid(d, tid)
       defaultFor(body):
         path.circle(float32(c[0]), float32(c[1]), triCentroidsRadius)
@@ -189,7 +189,7 @@ template pathForRegionCentroids*(d: Delaunator, body: untyped = nil): Path {.dir
   bind pixienator.plyCentroidsRadius
   block:
     var path = newPath()
-    for (pid, verts) in d.iterVoronoiRegions:
+    for (pid, verts) in iterVoronoiRegions(d):
       let c = polygonCentroid(verts)
       defaultFor(body):
         path.circle(float32(c[0]), float32(c[1]), plyCentroidsRadius)
@@ -235,7 +235,7 @@ template pathForHullSites*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   bind pixienator.hullSitesRadius
   block:
     var path = newPath()
-    for (hid, pid, p) in d.iterHullPoints:
+    for (hid, pid, p) in iterHullPoints(d):
       defaultFor(body):
         path.circle(float32(p[0]), float32(p[1]), hullSitesRadius)
     path
@@ -360,7 +360,7 @@ template pathForHull*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
     var
       path = newPath()
       epth = newPath()
-    for (hid, eid, pid, qid, p, q) in d.iterHullEdges:
+    for (hid, eid, pid, qid, p, q) in iterHullEdges(d):
       defaultFor(body):
         epth.moveTo(float32(p[0]), float32(p[1]))
         epth.lineTo(float32(q[0]), float32(q[1]))
@@ -426,7 +426,7 @@ proc pathForTriangleEdges*(
 template pathForTriangleEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
     var path = newPath()
-    for (tid, eid, pid, qid, p, q) in d.iterTriangleEdges:
+    for (tid, eid, pid, qid, p, q) in iterTriangleEdges(d):
       let pth = newPath()
       defaultFor(body):
         pth.moveTo(float32(p[0]), float32(p[1]))
@@ -454,7 +454,7 @@ template pathForTriangleEdges*(d: Delaunator, body: untyped = nil): Path {.dirty
 template pathsForTriangles*(d: Delaunator, body: untyped = nil): seq[Path] {.dirty.} =
   block:
     var paths = newSeqOfCap[Path](floorDiv(d.triangles.len, 3))
-    for (tid, pid, qid, rid, p, q, r) in d.iterTriangles:
+    for (tid, pid, qid, rid, p, q, r) in iterTriangles(d):
       var path = newPath()
       #pthproc(pth, tid, pid, qid, rid, p, q, r)
       defaultFor(body):
@@ -521,7 +521,7 @@ template pathForTriangle*(d: Delaunator, triangleId: uint32, body: untyped = nil
 template pathForRegionEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
     var path = newPath()
-    for (eid, p, q) in d.iterVoronoiEdges:
+    for (eid, p, q) in iterVoronoiEdges(d):
       var pth = newPath()
       defaultFor(body):
         pth.moveTo(float32(p[0]), float32(p[1]))
@@ -549,7 +549,7 @@ template pathForRegionEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.}
 template pathsForRegions*(d: Delaunator, body: untyped = nil): seq[Path] {.dirty.} =
   block:
     var paths = newSeqOfCap[Path](ashr(d.coords.len, 1))
-    for (sid, verts) in d.iterVoronoiRegions:
+    for (sid, verts) in iterVoronoiRegions(d):
       var path = newPath()
       defaultFor(body):
         path.moveTo(float32(verts[0][0]), float32(verts[0][1]))
