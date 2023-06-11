@@ -243,9 +243,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L34"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L35"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L34" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L35" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -253,11 +253,21 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">template</span> <a href="#pathForBounds.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForBounds</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">Path</span></span></tt> of the bounds of the triangulation. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for this bounds. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">minX</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's horizontal minimum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">minY</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's vertical minimum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">maxX</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's horizontal maximum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">maxY</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's vertical maximum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: Same as minX</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: Same as minY</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">w</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's width</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">h</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The bound's height</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L539"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L516"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L539" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L516" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -272,9 +282,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L90"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L91"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L90" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L91" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -288,9 +298,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L74"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L75"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L74" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L75" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -298,11 +308,21 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">template</span> <a href="#pathForExtents.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathForExtents</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">Path</span></span></tt> of the extents of the triangulation. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for this extent. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">minX</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's horizontal minimum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">minY</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's vertical minimum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">maxX</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's horizontal maximum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">maxY</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's vertical maximum.</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: Same as minX</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: Same as minY</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">w</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's width</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">h</span><span class="Punctuation">:</span> <span class="Identifier">T</span></span></tt>: The extent's height</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L522"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L488"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L522" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L488" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -320,9 +340,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L214"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L215"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L214" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L215" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -332,9 +352,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L288"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L290"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L288" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L290" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -350,9 +370,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L195"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L196"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L195" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L196" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -367,9 +387,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L179"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L180"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L179" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L180" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -378,11 +398,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">Path</span></span></tt> of the region specified by <tt class="docutils literal"><span class="pre"><span class="Identifier">siteId</span></span></tt>. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for this region. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">sid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The <em>point</em> index of the region's site</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">verts</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span><span class="Punctuation">]</span></span></tt>: The points of the region's polygon</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L509"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L470"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L509" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L470" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -398,9 +422,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L160"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L161"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L160" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L161" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -416,9 +440,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L143"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L144"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -428,9 +452,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L451"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L438"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L451" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L438" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -445,9 +469,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L56"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L57"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L56" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L57" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -461,9 +485,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L41"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L42"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L41" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L42" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -472,11 +496,21 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">Path</span></span></tt> of the triangle specified by <tt class="docutils literal"><span class="pre"><span class="Identifier">triangleId</span></span></tt>. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for this triangle. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">tid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The <em>triangles</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">pntIds</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">uint32</span><span class="Punctuation">]</span></span></tt>: The <em>point</em> indices of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">pid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 1st site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">qid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 2nd site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">rid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 3rd site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">p</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 1st site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">q</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 2nd site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">r</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 3rd site's location</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L417"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L392"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L417" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L392" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -491,9 +525,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L125"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L126"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L125" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -508,9 +542,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L109"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L110"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L110" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -520,9 +554,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L356"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L354"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L356" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L354" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -531,11 +565,21 @@ class="link-seesrc" target="_blank">Source</a>
                               <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Path</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">Path</span></span></tt> of all sites comprising the triangle specified by <tt class="docutils literal"><span class="pre"><span class="Identifier">triangleId</span></span></tt>. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for the triangle. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">tid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The <em>triangles</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">pntIds</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">uint32</span><span class="Punctuation">]</span></span></tt>: The <em>point</em> indices of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">pid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 1st site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">qid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 2nd site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">rid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 3rd site's <em>point</em> index of the specified triangle</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">p</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 1st site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">q</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 2nd site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">r</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 3rd site's location</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L319"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L304"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L319" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L304" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -554,9 +598,9 @@ Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier
 </ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L239"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L240"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L239" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L240" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -564,11 +608,15 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">template</span> <a href="#pathsForRegions.t%2CDelaunator%2Cuntyped"><span class="Identifier">pathsForRegions</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Delaunator</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span> <span class="Other">=</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Path</span><span class="Other">]</span> {.<span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">Path</span><span class="Punctuation">]</span></span></tt> of all regions of the voronoi diagram. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for each region. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">sid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The <em>point</em> index of the region's site</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">verts</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span><span class="Punctuation">]</span></span></tt>: The points of the region's polygon</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L479"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L451"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L479" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L451" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -577,11 +625,20 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">dirty</span>.}</pre></dt>
 <dd>
 
+Returns a <tt class="docutils literal"><span class="pre"><span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">Path</span><span class="Punctuation">]</span></span></tt> of all triangles of the triangulation. <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> will be evaluated for each triangle. Symbols available to <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt>:<ul class="simple"><li><tt class="docutils literal"><span class="pre"><span class="Identifier">path</span><span class="Punctuation">:</span> <span class="Identifier">Path</span></span></tt>: The path being constructed</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">tid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The <em>triangles</em> index of the triangle being considered</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">pid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 1st site's <em>point</em> index of the triangle being considered</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">qid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 2nd site's <em>point</em> index of the triangle being considered</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">rid</span><span class="Punctuation">:</span> <span class="Identifier">uint32</span></span></tt>: The 3rd site's <em>point</em> index of the triangle being considered</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">p</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 1st site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">q</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 2nd site's location</li>
+<li><tt class="docutils literal"><span class="pre"><span class="Identifier">r</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="Identifier">T</span><span class="Punctuation">]</span></span></tt>: The 3rd site's location</li>
+</ul>
 
 &nbsp;&nbsp;<a
-href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L384"
+href="https://github.com/patternspandemic/pixienator/tree/main/src/pixienator.nim#L367"
 class="link-seesrc" target="_blank">Source</a>
-&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L384" class="link-seesrc" target="_blank" >Edit</a>
+&nbsp;&nbsp;<a href="https://github.com/patternspandemic/pixienator/edit/devel/src/pixienator.nim#L367" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 </div>
@@ -595,7 +652,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-10 22:34:47 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-06-11 00:10:23 UTC</small>
       </div>
     </div>
   </div>
