@@ -33,6 +33,8 @@ let
 
 
 template defaultFor*(body, default: untyped) {.dirty.}=
+  ## A template for defining the `default` block to be used when no optional `body`
+  ## block is provided.
   when astToStr(body) == "nil":
     default
   else:
@@ -270,34 +272,23 @@ template pathsForHalfedgesAroundSite*(d: Delaunator, siteId: uint32, body: untyp
     paths
 
 
-
-# proc pathForHull*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, int32, uint32, uint32, array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, hid: uint32, eid: int32, pid: uint32, qid: uint32, p: array[2, float], q: array[2, float]) =
-#              pth.moveTo(float32(p[0]), float32(p[1]))
-#              pth.lineTo(float32(q[0]), float32(q[1]))
-#              pth.closePath()
-# ): Path =
-#   var
-#     path = newPath()
-#     epth = newPath()
-#   for (hid, eid, pid, qid, p, q) in d.iterHullEdges:
-#     pthproc(epth, hid, eid, pid, qid, p, q)
-#     path.addPath(epth)
-#   return path
-#FIXME: Use one path?
 template pathForHull*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the triangulation's hull. `body` will be evaluated
+  ## for each edge of the hull. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `hid: uint32`: The *hull* index of site the hull edge starts at
+  ## - `eid: int32`: The *halfedges* index of hull halfedge being considered
+  ## - `pid: uint32`: The *point* index of the site where the hull halfedge starts
+  ## - `qid: uint32`: The *point* index of the site where the hull halfedge ends
+  ## - `p: array[2, T]`: The hull halfedge's starting point location
+  ## - `q: array[2, T]`: The hull halfedge's ending point location
   block:
     var
       path = newPath()
-      epth = newPath()
     for (hid, eid, pid, qid, p, q) in iterHullEdges(d):
       defaultFor(body):
-        epth.moveTo(float32(p[0]), float32(p[1]))
-        epth.lineTo(float32(q[0]), float32(q[1]))
-        epth.closePath()
-      path.addPath(epth)
+        path.moveTo(float32(p[0]), float32(p[1]))
+        path.lineTo(float32(q[0]), float32(q[1]))
     path
 
 
@@ -333,34 +324,22 @@ template pathForTriangleSites*(d: Delaunator, triangleId: uint32, body: untyped 
     path
 
 
-#[
-proc pathForTriangleEdges*(
-  d: Delaunator,
-  pthproc: (var Path, uint32, int32, uint32, uint32, array[2, float], array[2, float]) -> void =
-           proc (pth: var Path, tid: uint32, eid: int32, pid: uint32, qid: uint32, p: array[2, float], q: array[2, float]) =
-             pth.moveTo(float32(p[0]), float32(p[1]))
-             pth.lineTo(float32(q[0]), float32(q[1]))
-             pth.closePath()
-): Path =
-  var
-    path = newPath()
-    epth = newPath()
-  for (tid, eid, pid, qid, p, q) in d.iterTriangleEdges:
-    pthproc(epth, tid, eid, pid, qid, p, q)
-    path.addPath(epth)
-  return path
-]#
-#FIXME: Use one path?
 template pathForTriangleEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all edges of the triangulation. `body` will be evaluated
+  ## for each edge. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `eid: int32`: The *halfedges* index of halfedge chosen to represent the edge
+  ## - `tid: uint32`: The *triangles* index of the triangle the halfedge above belongs to
+  ## - `pid: uint32`: The *point* index of the site where the halfedge starts
+  ## - `qid: uint32`: The *point* index of the site where the halfedge ends
+  ## - `p: array[2, T]`: The halfedge's starting point location
+  ## - `q: array[2, T]`: The halfedge's ending point location
   block:
     var path = newPath()
     for (tid, eid, pid, qid, p, q) in iterTriangleEdges(d):
-      let pth = newPath()
       defaultFor(body):
-        pth.moveTo(float32(p[0]), float32(p[1]))
-        pth.lineTo(float32(q[0]), float32(q[1]))
-        pth.closePath()
-      path.addPath(pth)
+        path.moveTo(float32(p[0]), float32(p[1]))
+        path.lineTo(float32(q[0]), float32(q[1]))
     path
 
 
@@ -420,31 +399,24 @@ template pathForTriangle*(d: Delaunator, triangleId: uint32, body: untyped = nil
     path
 
 
-# proc pathForRegionEdges*(
-#   d: Delaunator,
-#   pthproc: (var Path, int32, array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, eid: int32, p: array[2, float], q: array[2, float]) =
-#              pth.moveTo(float32(p[0]), float32(p[1]))
-#              pth.lineTo(float32(q[0]), float32(q[1]))
-#              pth.closePath()
-# ): Path =
-#   var path = newPath()
-#   for (eid, p, q) in d.iterVoronoiEdges:
-#     var pth = newPath()
-#     pthproc(pth, eid, p, q)
-#     path.addPath(pth)
-#   return path
-#FIXME: Use one path?
 template pathForRegionEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all region edges (bisectors of halfedges) of the voronoi
+  ## diagram. `body` will be evaluated for each region edge. Symbols available
+  ## to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `eid: int32`: The *halfedges* index of the halfedge bisected by the region edge
+  ## - `p: array[2, T]`: The location of the circumcenter for the triangle of which the halfedge is a part
+  ## - `q: array[2, T]`: For finite regions; The location of the circumcenter for
+  ## the triangle of which the halfedge's complement is a part. For infinite regions;
+  ## The location projected by the halfedge origin's rightmost ray onto the delaunator
+  ## object's defined bounds.
   block:
     var path = newPath()
     for (eid, p, q) in iterVoronoiEdges(d):
-      var pth = newPath()
       defaultFor(body):
-        pth.moveTo(float32(p[0]), float32(p[1]))
-        pth.lineTo(float32(q[0]), float32(q[1]))
-        pth.closePath()
-      path.addPath(pth)
+        path.moveTo(float32(p[0]), float32(p[1]))
+        path.lineTo(float32(q[0]), float32(q[1]))
+        path.closePath()
     path
 
 
@@ -484,6 +456,7 @@ template pathForRegion*(d: Delaunator, siteId: uint32, body: untyped = nil): Pat
           path.lineTo(float32(v[0]), float32(v[1]))
         path.closePath()
     path
+
 
 template pathForExtents*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   ## Returns a `Path` of the extents of the triangulation. `body` will be
