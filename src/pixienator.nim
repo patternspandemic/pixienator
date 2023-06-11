@@ -5,6 +5,7 @@ import delaunator, delaunator/helpers
 
 
 #[ TODO:
+ make note of "*points* index to *coords* index mapping"
  use `sid` in place of pid where it reps a site?
  pathForNeighborSites
 support labels
@@ -285,6 +286,7 @@ template pathsForHalfedgesAroundSite*(d: Delaunator, siteId: uint32, body: untyp
 #     pthproc(epth, hid, eid, pid, qid, p, q)
 #     path.addPath(epth)
 #   return path
+#FIXME: Use one path?
 template pathForHull*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
     var
@@ -299,24 +301,19 @@ template pathForHull*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
     path
 
 
-# proc pathForTriangleSites*(
-#   d: Delaunator,
-#   tid: uint32,
-#   pthproc: (var Path, uint32, uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[2, float], q: array[2, float], r: array[2, float]) =
-#              pth.circle(float32(p[0]), float32(p[1]), triangleSiteRadius)
-#              pth.circle(float32(q[0]), float32(q[1]), triangleSiteRadius)
-#              pth.circle(float32(r[0]), float32(r[1]), triangleSiteRadius)
-# ): Path =
-#   var
-#     path = newPath()
-#     pids = pointIdsOfTriangle(d, tid)
-#     a = [d.coords[2 * pids[0]], d.coords[2 * pids[0] + 1]]
-#     b = [d.coords[2 * pids[1]], d.coords[2 * pids[1] + 1]]
-#     c = [d.coords[2 * pids[2]], d.coords[2 * pids[2] + 1]]
-#   pthproc(path, tid, pids[0] ,pids[1], pids[2], a, b, c)
-#   return path
 template pathForTriangleSites*(d: Delaunator, triangleId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of all sites comprising the triangle specified by
+  ## `triangleId`. `body` will be evaluated for the triangle. Symbols available
+  ## to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the specified triangle
+  ## - `pntIds: seq[uint32]`: The *point* indices of the specified triangle
+  ## - `pid: uint32`: The 1st site's *point* index of the specified triangle
+  ## - `qid: uint32`: The 2nd site's *point* index of the specified triangle
+  ## - `rid: uint32`: The 3rd site's *point* index of the specified triangle
+  ## - `p: array[2, T]`: The 1st site's location
+  ## - `q: array[2, T]`: The 2nd site's location
+  ## - `r: array[2, T]`: The 3rd site's location
   bind triangleSiteRadius
   block:
     var
@@ -353,6 +350,7 @@ proc pathForTriangleEdges*(
     path.addPath(epth)
   return path
 ]#
+#FIXME: Use one path?
 template pathForTriangleEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
     var path = newPath()
@@ -366,22 +364,17 @@ template pathForTriangleEdges*(d: Delaunator, body: untyped = nil): Path {.dirty
     path
 
 
-# proc pathsForTriangles*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[2, float], q: array[2, float], r: array[2, float]) =
-#              pth.moveTo(float32(p[0]), float32(p[1]))
-#              pth.lineTo(float32(q[0]), float32(q[1]))
-#              pth.lineTo(float32(r[0]), float32(r[1]))
-#              pth.closePath()
-# ): seq[Path] =
-#   var paths = newSeqOfCap[Path](floorDiv(d.triangles.len, 3))
-#   for (tid, pid, qid, rid, p, q, r) in d.iterTriangles:
-#     var pth = newPath()
-#     pthproc(pth, tid, pid, qid, rid, p, q, r)
-#     paths.add(pth)
-#   return paths
 template pathsForTriangles*(d: Delaunator, body: untyped = nil): seq[Path] {.dirty.} =
+  ## Returns a `seq[Path]` of all triangles of the triangulation. `body` will be
+  ## evaluated for each triangle. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the triangle being considered
+  ## - `pid: uint32`: The 1st site's *point* index of the triangle being considered
+  ## - `qid: uint32`: The 2nd site's *point* index of the triangle being considered
+  ## - `rid: uint32`: The 3rd site's *point* index of the triangle being considered
+  ## - `p: array[2, T]`: The 1st site's location
+  ## - `q: array[2, T]`: The 2nd site's location
+  ## - `r: array[2, T]`: The 3rd site's location
   block:
     var paths = newSeqOfCap[Path](floorDiv(d.triangles.len, 3))
     for (tid, pid, qid, rid, p, q, r) in iterTriangles(d):
@@ -396,25 +389,18 @@ template pathsForTriangles*(d: Delaunator, body: untyped = nil): seq[Path] {.dir
     paths
 
 
-# proc pathForTriangle*(
-#   d: Delaunator,
-#   tid: uint32,
-#   pthproc: (var Path, uint32, uint32, uint32, uint32, array[2, float], array[2, float], array[2, float]) -> void =
-#            proc (pth: var Path, tid: uint32, pid: uint32, qid: uint32, rid: uint32, p: array[2, float], q: array[2, float], r: array[2, float]) =
-#              pth.moveTo(float32(p[0]), float32(p[1]))
-#              pth.lineTo(float32(q[0]), float32(q[1]))
-#              pth.lineTo(float32(r[0]), float32(r[1]))
-#              pth.closePath()
-# ): Path =
-#   var
-#     path = newPath()
-#     pids = pointIdsOfTriangle(d, tid)
-#     a = [d.coords[2 * pids[0]], d.coords[2 * pids[0] + 1]]
-#     b = [d.coords[2 * pids[1]], d.coords[2 * pids[1] + 1]]
-#     c = [d.coords[2 * pids[2]], d.coords[2 * pids[2] + 1]]
-#   pthproc(path, tid, pids[0], pids[1], pids[2], a, b, c)
-#   return path
 template pathForTriangle*(d: Delaunator, triangleId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the triangle specified by `triangleId`. `body` will be
+  ## evaluated for this triangle. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `tid: uint32`: The *triangles* index of the specified triangle
+  ## - `pntIds: seq[uint32]`: The *point* indices of the specified triangle
+  ## - `pid: uint32`: The 1st site's *point* index of the specified triangle
+  ## - `qid: uint32`: The 2nd site's *point* index of the specified triangle
+  ## - `rid: uint32`: The 3rd site's *point* index of the specified triangle
+  ## - `p: array[2, T]`: The 1st site's location
+  ## - `q: array[2, T]`: The 2nd site's location
+  ## - `r: array[2, T]`: The 3rd site's location
   block:
     var
       path = newPath()
@@ -448,6 +434,7 @@ template pathForTriangle*(d: Delaunator, triangleId: uint32, body: untyped = nil
 #     pthproc(pth, eid, p, q)
 #     path.addPath(pth)
 #   return path
+#FIXME: Use one path?
 template pathForRegionEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
   block:
     var path = newPath()
@@ -461,22 +448,12 @@ template pathForRegionEdges*(d: Delaunator, body: untyped = nil): Path {.dirty.}
     path
 
 
-# proc pathsForRegions*(
-#   d: Delaunator,
-#   pthproc: (var Path, uint32, seq[array[2, float]]) -> void =
-#            proc (pth: var Path, sid: uint32, verts: seq[array[2, float]]) =
-#              pth.moveTo(float32(verts[0][0]), float32(verts[0][1]))
-#              for v in verts[1 .. ^1]:
-#                pth.lineTo(float32(v[0]), float32(v[1]))
-#              pth.closePath()
-# ): seq[Path] =
-#   var paths = newSeqOfCap[Path](ashr(d.coords.len, 1))
-#   for (sid, verts) in d.iterVoronoiRegions:
-#     var pth = newPath()
-#     pthproc(pth, sid, verts)
-#     paths.add(pth)
-#  return paths
 template pathsForRegions*(d: Delaunator, body: untyped = nil): seq[Path] {.dirty.} =
+  ## Returns a `seq[Path]` of all regions of the voronoi diagram. `body` will be
+  ## evaluated for each region. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `sid: uint32`: The *point* index of the region's site
+  ## - `verts: seq[array[2, T]]`: The points of the region's polygon
   block:
     var paths = newSeqOfCap[Path](ashr(d.coords.len, 1))
     for (sid, verts) in iterVoronoiRegions(d):
@@ -490,23 +467,12 @@ template pathsForRegions*(d: Delaunator, body: untyped = nil): seq[Path] {.dirty
     paths
 
 
-# proc pathForRegion*(
-#   d: Delaunator,
-#   sid: uint32,
-#   pthproc: (var Path, uint32, seq[array[2, float]]) -> void =
-#            proc (pth: var Path, sid: uint32, verts: seq[array[2, float]]) =
-#              pth.moveTo(float32(verts[0][0]), float32(verts[0][1]))
-#              for v in verts[1 .. ^1]:
-#                pth.lineTo(float32(v[0]), float32(v[1]))
-#              pth.closePath()
-# ): Path =
-#   var
-#     path = newPath()
-#     (sid, verts) = voronoiRegion(d, sid)
-#   if verts.len != 0:
-#     pthproc(path, sid, verts)
-#   return path
 template pathForRegion*(d: Delaunator, siteId: uint32, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the region specified by `siteId`. `body` will be
+  ## evaluated for this region. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `sid: uint32`: The *point* index of the region's site
+  ## - `verts: seq[array[2, T]]`: The points of the region's polygon
   block:
     var
       path = newPath()
@@ -520,6 +486,17 @@ template pathForRegion*(d: Delaunator, siteId: uint32, body: untyped = nil): Pat
     path
 
 template pathForExtents*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the extents of the triangulation. `body` will be
+  ## evaluated for this extent. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `minX: T`: The extent's horizontal minimum.
+  ## - `minY: T`: The extent's vertical minimum.
+  ## - `maxX: T`: The extent's horizontal maximum.
+  ## - `maxY: T`: The extent's vertical maximum.
+  ## - `x: T`: Same as minX
+  ## - `y: T`: Same as minY
+  ## - `w: T`: The extent's width
+  ## - `h: T`: The extent's height
   block:
     var
       path = newPath()
@@ -537,6 +514,17 @@ template pathForExtents*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
 
 
 template pathForBounds*(d: Delaunator, body: untyped = nil): Path {.dirty.} =
+  ## Returns a `Path` of the bounds of the triangulation. `body` will be
+  ## evaluated for this bounds. Symbols available to `body`:
+  ## - `path: Path`: The path being constructed
+  ## - `minX: T`: The bound's horizontal minimum.
+  ## - `minY: T`: The bound's vertical minimum.
+  ## - `maxX: T`: The bound's horizontal maximum.
+  ## - `maxY: T`: The bound's vertical maximum.
+  ## - `x: T`: Same as minX
+  ## - `y: T`: Same as minY
+  ## - `w: T`: The bound's width
+  ## - `h: T`: The bound's height
   block:
     var
       path = newPath()
