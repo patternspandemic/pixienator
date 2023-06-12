@@ -1,8 +1,8 @@
 
-import std/sugar
-import pixie, pixie/paths
 import delaunator, delaunator/helpers
+import pixie
 
+export pixie, delaunator, helpers
 
 #[ TODO:
  make note of "*points* index to *coords* index mapping"
